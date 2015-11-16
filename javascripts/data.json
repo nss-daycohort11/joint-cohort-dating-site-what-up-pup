@@ -1,0 +1,12 @@
+{
+	"users": [
+		{
+			"userid": null,
+			"email": "",
+			"name": "",
+			"usergender": "",
+			"doggender": "",
+			"breed": ""
+		}
+	]
+}
