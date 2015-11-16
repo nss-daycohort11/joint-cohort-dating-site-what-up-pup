@@ -39,21 +39,16 @@
   <div class="container-fluid">
   	<div class="row">
   		<div class="col-md-3">
-  			<div class="profileImage">
+  			<div id="profileImage">
           <img src="" alt="profile picture">
         </div>
-  			<h2>Name</h2>
+        <h2 id="dogName">Name</h2>
               <fieldset>
-                <label for="breed" >Breed: </label>
-                <input type="text" id="dogBreed" name="breed">
-	            </fieldset>
+                <label for="aboutMe"><h3>About Me:</h3></label>
+              </fieldset>
               <fieldset>
-                <label for="dogGender">Dog Gender:</label>
-                <input type="text" id="dogGender" name="dogGender">
-              </fieldset> 
-              <fieldset>
-                <label for="ownerGender">Owner Gender:</label>
-                <input type="text" id="dogGender" name="dogGender">
+                <textarea id="aboutMe" name="aboutMe" rows="2" wrap="soft">
+                </textarea>
               </fieldset>
               <fieldset>
                 <label for="login-email" >Email: </label>
@@ -63,8 +58,21 @@
                 <label for="password">Password: </label>
                 <input type="password" id="createPassword" name="password">
               </fieldset>
-            <button type="button" id="saveButton">Save</button>
-            <button type="button" id="doneButton">Done</button>
+              <fieldset>
+                <label for="breed" >Breed: </label>
+                <input type="text" id="dogBreed" name="breed">
+              </fieldset>
+              <fieldset>
+                <label for="dogGender">Dog Gender:</label>
+                <input type="text" id="dogGender" name="dogGender">
+              </fieldset> 
+              <fieldset>
+                <label for="ownerGender">Owner Gender:</label>
+                <input type="text" id="dogGender" name="dogGender">
+              </fieldset>
+
+              <button type="button" id="saveButton">Save</button>
+              <button type="button" id="doneButton">Done</button>
             </div>
 
 
