@@ -24,14 +24,14 @@ require(
       var username = $("#login-email").val();
       var userpw = $("#login-password").val();
       auth.login(username, userpw);
-      window.location.href = "/main.html"
+      window.location.href = "/main.html";
     });
 
     $("#registerButton").click(function () {
       var createEmail = $("#createEmail").val();
       var createPassword = $("#createPassword").val();
       auth.createUser(createEmail, createPassword);
-    })
+    });
 
 
     
