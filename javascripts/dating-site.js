@@ -20,11 +20,18 @@ require(
   ["dependencies", "auth"], 
   function(_$_, auth) {
 
-    $("#createUser").click(function () {
-      var username = $("#userEmail").val();
-      var userpw = $("#userPW").val();
-      auth.createUser(username, userpw);
+    $("#signin").click(function () {
+      var username = $("#login-email").val();
+      var userpw = $("#login-password").val();
+      auth.login(username, userpw);
+      window.location.href = "/main.html"
     });
+
+    $("#registerButton").click(function () {
+      var createEmail = $("#createEmail").val();
+      var createPassword = $("#createPassword").val();
+      auth.createUser(createEmail, createPassword);
+    })
 
 
     
