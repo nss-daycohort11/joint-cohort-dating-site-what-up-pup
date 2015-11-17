@@ -24,7 +24,9 @@ require(
       var username = $("#login-email").val();
       var userpw = $("#login-password").val();
       auth.login(username, userpw);
+      
       window.location.href = "/main.html";
+
     });
 
     $("#registerButton").click(function () {
