@@ -2,6 +2,8 @@ define(function (require) {
   fb = require('firebase');
   var authInfo = null;
   var ref = new Firebase('https://what-up-pup.firebaseio.com');
+  var users = new Firebase('https://what-up-pup.firebaseio.com/users');
+
 
   return {
     getauthInfo: function () {
@@ -22,7 +24,14 @@ define(function (require) {
         email: userEmail, 
         password: pw
       }, function (error, userData) {
-        console.log("userData", userData)
+        console.log("error", error)
+        console.log("userData", userData);
+        users.push({
+          userId: userData.uid
+        });
+        if (userData != null) {
+          window.location.href = "profile.html"
+        }
       })
     }
   }
