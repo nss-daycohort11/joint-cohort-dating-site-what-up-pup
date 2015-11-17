@@ -17,23 +17,23 @@ define(function (require) {
          authInfo = authData;
          console.log("error", error);
          console.log("BlaH, BLAH", authData);
-       })
+       });
     },
     createUser: function (userEmail, pw) {
       ref.createUser({
         email: userEmail, 
         password: pw
       }, function (error, userData) {
-        console.log("error", error)
+        console.log("error", error);
         console.log("userData", userData);
         users.push({
           userId: userData.uid
         });
-        if (userData != null) {
-          window.location.href = "profile.html"
+        if (userData !== null) {
+          window.location.href = "profile.html";
         }
-      })
+      });
     }
-  }
+  };
 
 });
