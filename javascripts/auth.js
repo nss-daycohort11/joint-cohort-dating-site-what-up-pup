@@ -26,12 +26,20 @@ define(function (require) {
       }, function (error, userData) {
         console.log("error", error);
         console.log("userData", userData);
-        users.push({
-          userId: userData.uid
-        });
+        authInfo = userData.uid;
         if (userData !== null) {
           window.location.href = "profile.html";
         }
+      });
+    },
+    addUser: function (aboutme, dogname, useremail, dogbreed, dogGender, ownergender) {
+      users.push({
+        breed: dogbreed,
+        doggender: dogGender,
+        email: useremail,
+        usergender: ownergender,
+        aboutMe: aboutme,
+        dogName: dogname,
       });
     }
   };
