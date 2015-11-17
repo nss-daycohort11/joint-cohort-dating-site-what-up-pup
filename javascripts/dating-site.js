@@ -41,7 +41,8 @@ require(
       var dogGender = $("#dogGender").val();
       var ownerGender = $("#ownerGender").val();
       var dogname = $("#dogName").val();
-      auth.addUser(aboutme, dogname, email, breed, dogGender, ownerGender);
+      var profilepic = $("#profilepic").val();
+      auth.addUser(aboutme, dogname, email, breed, dogGender, ownerGender, profilepic);
       window.location.href ="/main.html";
     });
 

@@ -32,7 +32,7 @@ define(function (require) {
         }
       });
     },
-    addUser: function (aboutme, dogname, useremail, dogbreed, dogGender, ownergender) {
+    addUser: function (aboutme, dogname, useremail, dogbreed, dogGender, ownergender, profilepic) {
       users.push({
         breed: dogbreed,
         doggender: dogGender,
@@ -40,6 +40,7 @@ define(function (require) {
         usergender: ownergender,
         aboutMe: aboutme,
         dogName: dogname,
+        profile: profilepic
       });
     }
   };
