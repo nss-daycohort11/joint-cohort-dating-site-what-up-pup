@@ -58,5 +58,9 @@ require(
       console.log("Failure");
     }
 
+     $("body").on("click", "#favorite", function () {
+      console.log("this", this);
+     }) 
+
   }
 );
