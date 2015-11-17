@@ -17,8 +17,8 @@ require.config({
 });
 
 require(
-  ["dependencies", "auth"], 
-  function(_$_, auth) {
+  ["dependencies", "auth", "load", "dom"], 
+  function(_$_, auth, getUsers, dom) {
 
     $("#signin").click(function () {
       var username = $("#login-email").val();
@@ -29,13 +29,35 @@ require(
 
     });
 
-    $("#registerButton").click(function () {
+    $("#register").click(function () {
       var createEmail = $("#createEmail").val();
       var createPassword = $("#createPassword").val();
+      console.log("register button");
       auth.createUser(createEmail, createPassword);
     });
 
+    $("#saveButton").click(function () {
+      var aboutme = $("#aboutMe").val();
+      var email = $("#userEmail").val();
+      var breed = $("#dogBreed").val();
+      var dogGender = $("#dogGender").val();
+      var ownerGender = $("#ownerGender").val();
+      var dogname = $("#dogName").val();
+      auth.addUser(aboutme, dogname, email, breed, dogGender, ownerGender);
+      window.location.href ="/main.html";
+    });
 
-    
+    var currentLocation = window.location.pathname;
+    if (currentLocation == "/main.html") {
+       getUsers()
+       .then(function (returned) {
+        console.log("returned data", returned);
+        dom.dom(returned);
+        console.log(dom.dom);
+       })
+    } else {
+      console.log("Failure");
+    }
+
   }
 );

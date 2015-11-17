@@ -14,4 +14,10 @@ body::after {
   position: absolute;
   z-index: -1; }
 
+  #mainthumb {
+    display: inline-block;
+    margin: 20px;
+    width: 200px;
+  }
+
 /*# sourceMappingURL=main.css.map */
