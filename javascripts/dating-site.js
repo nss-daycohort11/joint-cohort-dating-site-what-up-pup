@@ -20,6 +20,11 @@ require(
   ["dependencies", "auth", "load", "dom"], 
   function(_$_, auth, getUsers, dom) {
 
+
+    /*  confirms former user sign in. gets click, grabs values from email and password
+        stores them in variables, then the auth.login function is called, which validates       ===>>>>>> 
+        the user's info in Firebase by passing the email and password values as arguments. 
+        Then the main.html page loads. */
     $("#signin").click(function () {
       var username = $("#login-email").val();
       var userpw = $("#login-password").val();
@@ -29,6 +34,10 @@ require(
 
     });
 
+    /*  when the user enters their email and password into the fields and register button is clicked, 
+        the values from email and password are passed to the auth.createUser function, which uses the info
+        to store a new user in Firebase. Then the user is directed to the profile.html page where the will 
+        enter their personal info. */
     $("#register").click(function () {
       var createEmail = $("#createEmail").val();
       var createPassword = $("#createPassword").val();
@@ -36,6 +45,8 @@ require(
       auth.createUser(createEmail, createPassword);
     });
 
+    /*  The user enters their personal info 
+    */
     $("#saveButton").click(function () {
       var aboutme = $("#aboutMe").val();
       var email = $("#userEmail").val();
@@ -55,7 +66,7 @@ require(
         console.log("returned data", returned);
         dom.dom(returned);
         console.log(dom.dom);
-       })
+      });
     } else {
       console.log("Failure");
     }

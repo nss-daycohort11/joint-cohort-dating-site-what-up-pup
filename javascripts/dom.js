@@ -6,5 +6,5 @@ define(function (require) {
 				$("#main-content").append(candidates({users: users}));
 			});
 		}
-	}
+	};
 });
