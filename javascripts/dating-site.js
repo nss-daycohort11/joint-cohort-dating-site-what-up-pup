@@ -19,6 +19,16 @@ require.config({
 require(
   ["dependencies", "auth", "load", "dom"], 
   function(_$_, auth, getUsers, dom) {
+    
+
+    $('#myModal').on('shown.bs.modal', function () {
+    $('#myInput').focus();
+    console.log("This bootstrap thing works");
+    })
+    $('#myModal2').on('shown.bs.modal', function () {
+    $('#myInput').focus();
+    console.log("This bootstrap thing works");
+    })
 
     $("#signin").click(function () {
       var username = $("#login-email").val();
