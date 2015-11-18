@@ -20,6 +20,11 @@ require(
   ["dependencies", "auth", "load", "dom"], 
   function(_$_, auth, getUsers, dom) {
 
+    /* confirms former user sign in. gets click, grabs values from email and password
+        stores them in variables, then the login function is called on auth.js         ===>>>>>> 
+        passing the email and password values as arguments. 
+
+    */
     $("#signin").click(function () {
       var username = $("#login-email").val();
       var userpw = $("#login-password").val();
@@ -53,7 +58,7 @@ require(
         console.log("returned data", returned);
         dom.dom(returned);
         console.log(dom.dom);
-       })
+       });
     } else {
       console.log("Failure");
     }

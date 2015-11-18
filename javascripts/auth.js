@@ -9,6 +9,7 @@ define(function (require) {
     getauthInfo: function () {
       return authInfo;
     },
+    
     login: function (userEmail, pw) {
        ref.authWithPassword({
         email: userEmail,
