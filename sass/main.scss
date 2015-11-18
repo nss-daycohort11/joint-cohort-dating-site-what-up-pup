@@ -19,3 +19,8 @@ body::after {
   position: absolute;
   z-index: -1;   
 }
+
+#mainthumb {
+  display:inline-block;
+  width: 300px;
+}

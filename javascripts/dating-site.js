@@ -17,9 +17,14 @@ require.config({
 });
 
 require(
-  ["dependencies", "auth"], 
-  function(_$_, auth) {
+  ["dependencies", "auth", "load", "dom"], 
+  function(_$_, auth, getUsers, dom) {
 
+    /* confirms former user sign in. gets click, grabs values from email and password
+        stores them in variables, then the login function is called on auth.js         ===>>>>>> 
+        passing the email and password values as arguments. 
+
+    */
     $("#signin").click(function () {
       var username = $("#login-email").val();
       var userpw = $("#login-password").val();
@@ -27,13 +32,36 @@ require(
       window.location.href = "/main.html";
     });
 
-    $("#registerButton").click(function () {
+    $("#register").click(function () {
       var createEmail = $("#createEmail").val();
       var createPassword = $("#createPassword").val();
+      console.log("register button");
       auth.createUser(createEmail, createPassword);
     });
 
+    $("#saveButton").click(function () {
+      var aboutme = $("#aboutMe").val();
+      var email = $("#userEmail").val();
+      var breed = $("#dogBreed").val();
+      var dogGender = $("#dogGender").val();
+      var ownerGender = $("#ownerGender").val();
+      var dogname = $("#dogName").val();
+      var profilepic = $("#profilepic").val();
+      auth.addUser(aboutme, dogname, email, breed, dogGender, ownerGender, profilepic);
+      window.location.href ="/main.html";
+    });
 
-    
+    var currentLocation = window.location.pathname;
+    if (currentLocation == "/main.html") {
+       getUsers()
+       .then(function (returned) {
+        console.log("returned data", returned);
+        dom.dom(returned);
+        console.log(dom.dom);
+       });
+    } else {
+      console.log("Failure");
+    }
+
   }
 );
