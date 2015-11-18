@@ -59,6 +59,7 @@ require(
       var createPassword = $("#createPassword").val();
       console.log("register button");
       auth.createUser(createEmail, createPassword);
+      
     });
 
     /*  The user enters their personal info into the profile fields, and when the save button is clicked,
@@ -86,15 +87,11 @@ require(
        .then(function (returned) {
         console.log("returned data", returned);
         dom.buildProfiles(returned);
-        console.log(dom.dom);
+        console.log(dom.buildProfiles);
       });
     } else {
       console.log("Failure");
     }
-
-     $("body").on("click", "#favorite", function () {
-      console.log("this", this);
-     }) 
 
   }
 );

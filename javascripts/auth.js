@@ -6,7 +6,8 @@ define(function (require) {
   var ref = new Firebase('https://what-up-pup.firebaseio.com');
   // users object holds the data from the firebase/users
   var users = new Firebase('https://what-up-pup.firebaseio.com/users');
-
+  var dom = require('dom');
+  console.log("domdomdomdom", dom);
 
   return {
     
@@ -19,7 +20,7 @@ define(function (require) {
        }, function (error, authData) {  // not used
          authInfo = authData;
          if (error) {
-          return false
+          return false;
          } else {
           return authData;
          }
@@ -38,8 +39,7 @@ define(function (require) {
         // uid is the unique key, or string, that is set to each user
         authInfo = userData.uid;
         if (userData !== null) {
-          window.location.href = "profile.html";
-        }
+          dom.loadProfile();        }
       });
     },
     addUser: function (aboutme, dogname, useremail, dogbreed, dogGender, ownergender, profilepic) {
