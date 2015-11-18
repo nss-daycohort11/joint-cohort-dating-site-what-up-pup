@@ -1,7 +1,7 @@
 
 {{#each users}}
 	<div class="row" id="mainthumb">
-		<div class="">
+		<div class="" id="{{{@key}}}">
 			<div class="thumbnail">
 
 			 	<img src="{{profile}}" alt="...">
@@ -13,7 +13,7 @@
 					<section>Gender: {{ doggender }}</section>
 					<section>Owner Gender: {{ usergender }}</section>
 					<section>Email Me: {{ email }}</section>
-					<p><a href="#" class="btn btn-primary" role="button">Favorite</a></p>
+					<p><a href="#" class="btn btn-primary btn-sm" role="button">Favorite</a></p>
 				</div>
 			</div>
 		</div>

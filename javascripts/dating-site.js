@@ -19,6 +19,19 @@ require.config({
 require(
   ["dependencies", "auth", "load", "dom"], 
   function(_$_, auth, getUsers, dom) {
+    
+    
+      require(["hbs!../templates/landing-page"], function (landingPage) {
+        $("#catcher").html(landingPage());
+      });
+
+    $(document).on('click', 'shown.bs.modal', function() {
+      $('#myInput').focus();
+      console.log("This bootstrap thing works"); 
+    })
+
+   
+    
 
 
     /*  confirms former user sign in. gets click, grabs values from email and password
@@ -29,7 +42,9 @@ require(
       var username = $("#login-email").val();
       var userpw = $("#login-password").val();
       auth.login(username, userpw);
+      
       window.location.href = "/main.html";
+
     });
 
     /*  when the user enters their email and password into the fields and register button is clicked, 
@@ -68,6 +83,10 @@ require(
     } else {
       console.log("Failure");
     }
+
+     $("body").on("click", "#favorite", function () {
+      console.log("this", this);
+     }) 
 
   }
 );
