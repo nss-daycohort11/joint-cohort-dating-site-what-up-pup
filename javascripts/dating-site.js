@@ -21,14 +21,17 @@ require(
   function(_$_, auth, getUsers, dom) {
 
 
-    /*  confirms former user sign in. gets click, grabs values from email and password
+    /*  event listener confirms former user sign in. gets click, grabs values from email and password
         stores them in variables, then the auth.login function is called, which validates       ===>>>>>> 
         the user's info in Firebase by passing the email and password values as arguments. 
         Then the main.html page loads. */
     $("#signin").click(function () {
       var username = $("#login-email").val();
       var userpw = $("#login-password").val();
-      auth.login(username, userpw);
+      var user = auth.login(username, userpw);
+      if (user) {
+        // load up a new view through handlebars
+      }
       window.location.href = "/main.html";
     });
 
@@ -43,8 +46,9 @@ require(
       auth.createUser(createEmail, createPassword);
     });
 
-    /*  The user enters their personal info 
-    */
+    /*  The user enters their personal info into the profile fields, and when the save button is clicked,
+        all of the values from the fields are passed as arguments into the auth.addUser function, which gets 
+        values and pushes them into the users object in Firebase for storag. */
     $("#saveButton").click(function () {
       var aboutme = $("#aboutMe").val();
       var email = $("#userEmail").val();
@@ -57,12 +61,16 @@ require(
       window.location.href ="/main.html";
     });
 
+    /* checks what page is currently loaded, and if it is 'main.html', it waits for the promise
+        to be returned from load.js which is the users data being returned from Firebase, then the 
+        dom.buildProfiles function is called, passing the users data into the template, where it is 
+        looped over to populate the dom with profiles. */ 
     var currentLocation = window.location.pathname;
     if (currentLocation == "/main.html") {
        getUsers()
        .then(function (returned) {
         console.log("returned data", returned);
-        dom.dom(returned);
+        dom.buildProfiles(returned);
         console.log(dom.dom);
       });
     } else {
