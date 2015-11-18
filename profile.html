@@ -17,6 +17,7 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
     <a href="main.html"><h1>What up, Pup?</h1></a>
+    <h3>A blind-dating service for people who love dogs.</h3>
 
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
@@ -37,16 +38,10 @@
 <div class="container-fluid">
      <div class="row">
          <div class="col-md-3">
-             <div id="profileImage">
-         <img src="" alt="profile picture">
-       </div>
-             <fieldset>
-               <label for="aboutMe"><h3>About Me:</h3></label>
-             </fieldset>
+            <h1>WELCOME. ENTER YOUR PROFILE INFO BELOW.....</h1>
+             
+             <label for="profilepic">Enter URL for profile pic here:
              <input type="text" id="profilepic"></input>
-             <fieldset>
-               <textarea id="aboutMe" name="aboutMe" rows="2" wrap="soft"></textarea>
-             </fieldset>
              <fieldset>
                <label for="login-email" >Email: </label>
                <input type="email" id="userEmail" name="email">
@@ -66,6 +61,10 @@
              <fieldset>
                <label for="dogName">Dog Name:</label>
                <input type="text" id="dogName" name="dogName">
+             </fieldset>
+             <fieldset>
+               <label for="aboutMe"><h3>About Me:</h3></label>
+               <textarea id="aboutMe" name="aboutMe" rows="2" wrap="soft"></textarea>
              </fieldset>
 
              <button type="button" id="saveButton">Save</button>             

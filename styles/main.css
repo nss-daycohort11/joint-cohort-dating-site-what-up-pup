@@ -14,10 +14,9 @@ body::after {
   position: fixed;
   z-index: -1; }
 
-  #mainthumb {
-    display: inline-block;
-    margin: 20px;
-    width: 200px;
-  }
+#mainthumb {
+  display: inline-block;
+  width: 300px;
+  margin: 0 0 0 0; }
 
 /*# sourceMappingURL=main.css.map */
