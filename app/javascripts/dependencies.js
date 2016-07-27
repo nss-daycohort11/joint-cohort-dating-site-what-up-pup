@@ -4,4 +4,4 @@ define(function(require) {
   var h = require("hbs");
   var fb = require("firebase");
   var dom = require("dom");
-});
+});()
